@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+      <link rel="stylesheet" href="assets/css/styles.css">
+      <title>OPI | Temperature Calculator</title>
+   </head>
+   <body>
+      <header class="header" id="header">
+         <nav class="nav container">
+            <a href="#" class="nav_logo"><i class="ri-instagram-line ig_icon"></i>_OPIXZ</a>
+
+            <div class="nav_menu" id="nav-menu">
+               <ul class="nav_list">
+
+                  <li>
+                     <a href="#" class="nav_link" id="btn-about">About WEB</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="nav_link" id="btn-contact">Contact Me</a>
+                  </li>
+               </ul>
+
+               <div class="nav_close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <div class="nav_actions">
+               <i class="ri-information-line icon_info" id="btn-info"></i>
+               <div class="nav_toggle" id="nav-toggle">
+                  <i class="ri-menu-line"></i>
+               </div>
+            </div>
+         </nav>
+      </header>
+
+
+      <div class="about" id="about">
+         <form action="" class="form">
+            <h2 class="title">ABOUT WEB</h2>
+            <div>
+               <p class="text-paragraph">
+                  This website was created through hands-on coding practice as part of the Mini Project in the Software Engineering
+                   Fundamental Course at <a class="revou" href="https://apply.revou.co/fundamental-course-swe?utm_source=instagram&utm_medium=organic&utm_campaign=minicourse&utm_content=feed_single_postermc">revoU</a>.
+               </p>
+            </div>
+         </form>
+
+         <i class="ri-close-line about_close" id="about-close"></i>
+      </div>
+
+      <div class="contact" id="contact">
+         <form action="" class="form">
+             <h2 class="title">CONTACT ME</h2>
+             <div>
+                  <div class="text-paragraph">
+                     Name: 
+                     <span class="text-contact">Shofie N.</span>
+                  </div>
+                  <div class="text-paragraph">
+                     I'm a: 
+                     <span class="text-contact">Junior Frontend Developer</span>
+                  </div>
+                  <div class="text-paragraph iconn">
+                     <a href="https://www.instagram.com/opi.whimsy?igsh=aWhrcW1sOXYwZHd1" target="_blank" class="icon_contact"><i class="ri-instagram-line"></i></a>
+                     <a href="https://www.linkedin.com/in/shofie-nashierotuzzahro-285b322a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="icon_contact"><i class="ri-linkedin-fill"></i></a>
+                     <a href="#" target="_blank" class="icon_contact"><i class="ri-twitter-fill"></i></a>                     
+                     <a href="#" target="_blank" class="icon_contact"><i class="ri-github-fill"></i></a>                     
+                  </div>
+             </div>
+         </form>
+         <i class="ri-close-line contact_close" id="contact-close"></i>
+     </div>
+
+      <div class="info" id="info">
+         <form action="" class="form">
+            <h2 class="title">How to convert Celsius (°C) to Fahrenheit (°F) ?</h2>
+            
+            <div>
+               <p class="text-paragraph">
+                  Temperature S in Fahrenheit (°F) equals the temperature S in Celsius (°C) multiplied by 9/5 plus 32. <br>
+                  <span class="rumus">S (°F) =(S (°C) x 9/5 )+32</span>
+                  or
+                  <span class="rumus">S (°F) =(S (°C) x 1.8 )+32</span>
+               </p>
+            </div>
+         </form>
+
+         <i class="ri-close-line info_close" id="info-close"></i>
+      </div>
+
+      <main class="main">
+         <img src="assets/img/bg-image.png" alt="image" class="bg">
+         <div class="margin__custom">
+            <form action="" class="form" id="C-to-F">
+               <h2 class="title">Temperature Calculator</h2>
+               
+               <div class="group">
+                  <p class="text-paragraph">
+                     Enter temperature in degrees Celsius (°C) in box below, then click Conversion button to obtain conversion result in Fahrenheit (°F).
+                  </p>
+                  <div>
+                     <label for="celcius" class="label" id="labelCelsius">Celsius (°C)</label>
+                     <input type="number" placeholder="Enter Celsius" id="celcius" class="text_input">
+                   </div>
+                   
+                   <div class="btn_all">
+                     <button type="button" id="konversi" class="btn btn-konversi" onclick="btn_konversi()">Konversi</button>
+                     <button type="button" id="reset" class="btn btn_reset" onclick="btn_reset()">Reset</button>
+                     <button type="button" id="reverse-C-to-F" class="btn btn_reverse" onclick="btn_reverse()">Reverse</button>
+                   </div>
+                   
+                   <div>
+                     <label for="Fahrenheit" class="label">Fahrenheit (°F)</label>
+                     <input type="text" placeholder="Fahrenheit Results" id="fahrenheit" class="text_input fahrenheit_input" disabled>
+                   </div>
+                   
+                   <div>
+                     <label for="formula" class="label">Formula</label>
+                     <input type="text" placeholder="(°C x 9/5) + 32 = °F" id="formula" class="text_input fahrenheit_input" disabled>
+                   </div>
+               </div>
+
+            </form>
+            <form action="" class="form"  id="F-to-C" style="display: none;">
+               <h2 class="title">Temperature Calculator</h2>
+               <div class="group">
+                  <p class="text-paragraph">
+                     Enter temperature in degrees Fahrenheit (F°) in box below, then click Conversion button to obtain conversion result in Celcius (C°).
+                  </p>
+                  <div>
+                     <label for="fahrenheit" class="label">Fahrenheit (°F)</label>
+                     <input type="number" placeholder="Enter Fahrenheit" id="fahrenheit-1" class="text_input">
+                   </div>
+                   
+                   <div class="btn_all">
+                     <button type="button" id="konversi" class="btn btn-konversi" onclick="btn_konversi_reverse()">Konversi</button>
+                     <button type="button" id="reset" class="btn btn_reset" onclick="btn_reset_reverse()">Reset</button>
+                     <button type="button" id="reverse-F-to-C" class="btn btn_reverse" onclick="btn_reverse_reverse()">Reverse</button>
+                   </div>
+                   
+                   <div>
+                     <label for="celcius" class="label">Celcius (°C)</label>
+                     <input type="number" placeholder="Celcius Results" id="celcius-1" class="text_input fahrenheit_input" disabled>
+                   </div>
+                   
+                   <div>
+                     <label for="formula" class="label">Formula</label>
+                     <input type="text" placeholder="( °F − 32) × 5/9 = °C" id="formula-1" class="text_input fahrenheit_input" disabled>
+                   </div>
+               </div>
+            </form>
+         </div>
+      </main>
+      <script>
+         function btn_reverse() {
+    // Toggle visibility for C-to-F
+    const cToFGroup = document.getElementById('C-to-F');
+    const fToCGroup = document.getElementById('F-to-C');
+    
+    cToFGroup.style.display = 'none';
+    fToCGroup.style.display = 'block';
+}
+
+function btn_reverse_reverse() {
+    // Toggle visibility for F-to-C
+    const cToFGroup = document.getElementById('C-to-F');
+    const fToCGroup = document.getElementById('F-to-C');
+    
+    cToFGroup.style.display = 'block';
+    fToCGroup.style.display = 'none';
+}
+
+      </script>
+      
+      <script src="assets/js/script.js"></script>
+   </body>
+</html>
